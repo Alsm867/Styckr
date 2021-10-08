@@ -1,4 +1,4 @@
-# Stikr
+# Stickr
 https://styckr.herokuapp.com/
 
 ---
