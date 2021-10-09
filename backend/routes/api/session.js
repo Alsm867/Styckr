@@ -63,11 +63,6 @@ router.delete(
     }
   );
 
-  router.get("/demo", asyncHandler(async (req, res) => {
-    const user = await db.User.findByPk(1);
-    login("demo-lition", "password");
-    return res.json({ user });
-  })
-  );
+
 
 module.exports = router;
