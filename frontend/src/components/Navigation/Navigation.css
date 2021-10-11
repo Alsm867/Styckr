@@ -1,19 +1,32 @@
 .demo{
     font-size: 15px;
-    background-color: rgb(0, 58, 3);
-    color: rgb(0, 255, 13);
-    border-top: solid 1px rgb(0, 245, 33);
+    background-color: rgb(58, 38, 0);
+    color: rgb(255, 174, 0);
+    border-top: solid 1px rgb(255, 174, 0);
     border-radius: 5px;
     padding: 5px;
     margin: 10px;
 }
 
+
+
+.logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 5px;
+    padding-left: 10px;
+    width: 100px;
+    height: 40px;
+}
+
 .home-page{
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.63);
-    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#nav-tag{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
