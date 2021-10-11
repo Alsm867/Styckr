@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
+import SignupFormModal from "../SignupFormModal";
 import * as sessionActions from '../../store/session';
 import './Navigation.css';
 
@@ -30,7 +31,7 @@ function Navigation({ isLoaded }){
       <>
         <LoginFormModal />
         <button onClick={demoLogin}>Demo Login</button>
-        <NavLink to="/signup">Sign Up</NavLink>
+        <SignupFormModal />
       </>
     );
   }
