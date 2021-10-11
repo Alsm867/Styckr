@@ -1,0 +1,24 @@
+.home-back {
+  background-image: url("./images/1.jpg");
+  animation: chbg 10s infinite alternate;
+  background-size: cover;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-direction: alternate;
+}
+
+@keyframes chbg {
+  0% {
+    background-image: url("./images/2.jpg");
+    background-size: cover;
+  }
+  20% {
+    background-image: url("./images/3.jpg");
+    background-size: cover;
+  }
+  40% {
+    background-image: url("./images/4.jpg");
+    background-size: cover;
+  }
+}
