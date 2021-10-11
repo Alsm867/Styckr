@@ -24,15 +24,15 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <ProfileButton className="profile-user" user={sessionUser} />
     );
   } else {
     sessionLinks = (
-      <>
-        <LoginFormModal />
-        <button onClick={demoLogin}>Demo Login</button>
-        <SignupFormModal />
-      </>
+        <div className='home-page'>
+          <LoginFormModal className="login-form"/>
+          <button className='demo' onClick={demoLogin}>Demo Login</button>
+          <SignupFormModal className="signup-form"/>
+        </div>
     );
   }
 
