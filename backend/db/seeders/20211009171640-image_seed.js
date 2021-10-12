@@ -20,6 +20,24 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          userId: 4,
+          albumId: 1,
+          imageUrl:
+            "https://static01.nyt.com/images/2021/06/20/books/review/03Slaght/merlin_186175170_c658e009-7b81-487f-8f2b-eee8981be8dd-superJumbo.jpg",
+          content: "Test Content",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 4,
+          albumId: 1,
+          imageUrl:
+            "http://www.cbf.org/assets/images/1171-x-593-px/forest-stream-shenandoah-national-park-justin-black-iLCP-1171x593.jpg",
+          content: "Test Content",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        }
       ],
       {}
     );
