@@ -6,9 +6,7 @@ async function list() {
 }
 
 async function findImagebyPk(id) {
-  return await Image.findOne({
-    where: { id },
-  });
+  return await Image.findByPk(id);
 }
 
 async function findImageByUserId(userId) {

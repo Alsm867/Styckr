@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import {useEffect, useState} from 'react';
-import {getImage, upload} from '../../store/images';
+import {addingImage, upload} from '../../store/images';
 // import { useHistory } from 'react-router-dom';
 import './ImagesComponent.css';
 
@@ -15,7 +15,7 @@ const [toggle, setToggle] = useState(true);
 const dispatch = useDispatch();
 const images = useSelector(state => state.images[userId])
 useEffect(()=>{
-  dispatch(getImage(userId))
+  dispatch(addingImage(userId))
     },[dispatch, toggle])
 
     const handleSubmit = async (e) => {
@@ -42,7 +42,7 @@ useEffect(()=>{
         </div>
         <div className="image-page">
         {images?.images.map(image=>
-          <a href={`/imagesDetail/${userId}/${image.id}`} key={image.id}>
+          <a href={`/images/${userId}/${image.id}`} key={image.id}>
             <img src={image.imageUrl}  alt='profile' className='the-images' />
           </a>)}
         </div>

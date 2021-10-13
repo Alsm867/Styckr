@@ -22,11 +22,10 @@ function App() {
           <Route path="/signup">
             <SignupFormModal />
           </Route>
-          <Route path='/images' >
+          <Route exact path='/images/:userId' >
             <Profile />
           </Route>
-          <Route path='/imagesDetail/:userId/:id'>
-            {/* TODO create image detail component */}
+          <Route path='/images/:userId/:imageId'>
             <ImageDetail />
           </Route>
         </Switch>

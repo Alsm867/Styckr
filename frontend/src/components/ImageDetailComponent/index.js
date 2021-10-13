@@ -1,31 +1,49 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { getImage } from "../../store/images";
+import { viewImage, deleteImage } from "../../store/images";
+import {useParams} from 'react-router-dom';
 import "./ImageDetailComponent.css";
 
 const ImageDetail = () => {
   const [imageUrl, setImageUrl] = useState("");
-  const sessionUser = useSelector(state => state.session.user);
+  const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
   const dispatch = useDispatch();
-  const images = useSelector((state) => state.images[userId]);
-  console.log(images)
-  useEffect(()=>{
-      dispatch(getImage(userId))
-    },[dispatch])
+  const {imageId} = useParams();
+  useEffect(() => {
+    dispatch(viewImage(userId, imageId));
+  }, [dispatch, userId, imageId]);
+  const images = useSelector((state) => Object.values(state.images));
+  console.log("INSIDE IMAGE DATAIL COMP", imageId)
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-    }
+  console.log("LOGGING IMAGES IN STATE", images)
+
+
+  const image = images?.image
+
+  console.log(image)
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
+
 
   return (
-      <div className='single-image-page'>
-         <img className="single-image" src={images?.images[0].imageUrl} key={imageUrl} alt='forest'/>
-         <form onSubmit={handleSubmit} className="submit-comment">
-         <textarea type='text'/>
-         <button type='submit' className='submit-bttn' >Submit</button>
-         </form>
-      </div>
+    <div className="single-image-page">
+      <img
+        className="single-image"
+        src={images.imageUrl}
+        key={images.imageUrl}
+        alt="forest"
+      />
+      <form onSubmit={handleSubmit} className="submit-comment">
+        <textarea type="text" />
+        <button type="submit" className="submit-bttn">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 

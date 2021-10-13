@@ -15,6 +15,11 @@ router.get('/:id', asyncHandler(async function(req, res){
     return res.json({images});
 }));
 
+router.get('/:userId/:imageId', asyncHandler(async function(req, res){
+    const image = await imageRepo.findImagebyPk(req.params.imageId);
+    return res.json({image});
+}))
+
 router.post('/new', asyncHandler(async function(req, res){
     console.log("INSIDE POST ROUTE",req.body)
     const {userId, imageUrl} = req.body;

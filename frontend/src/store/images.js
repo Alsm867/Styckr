@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 //reducer variables
 const ADD_IMAGE = "images/add_image";
 const REMOVE_IMAGE = "images/remove_image";
+const VIEW_IMAGE = "images/view_image"
 
 //actions
 const uploadImage = (image) => {
@@ -11,6 +12,13 @@ const uploadImage = (image) => {
     image,
   };
 };
+
+const getImage = (image) => {
+  return {
+    type: VIEW_IMAGE,
+    image
+  }
+}
 
 const addImage = (images, userId) => {
   return {
@@ -28,7 +36,15 @@ const removeImage = (image) => {
 };
 
 //action creators
-export const getImage = (userId) => async (dispatch) => {
+export const viewImage = (userId, id) => async (dispatch) => {
+  const response = await fetch(`/api/images/${userId}/${id}`);
+  if(response.ok){
+  const image = await response.json();
+  dispatch(getImage(image.image))
+  }
+}
+
+export const addingImage = (userId) => async (dispatch) => {
   const response = await fetch(`/api/images/${userId}`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
@@ -62,11 +78,15 @@ export const upload = (userId, imageUrl) => async (dispatch) => {
 };
 
 //reducer itself
-const initialState = { images: null };
+const initialState = {};
 
 const imageReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
+    case VIEW_IMAGE:
+      newState = Object.assign({}, state);
+      newState.image = action.image;
+      return newState;
     case ADD_IMAGE:
       newState = Object.assign({}, state);
       newState[action.userId] = action.payload;
