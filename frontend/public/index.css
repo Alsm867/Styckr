@@ -27,9 +27,3 @@
     background-color: rgba(36, 41, 41, 0.568);
     border-radius: 5px;
 }
-
-#root .logo{
-   display:flex;
-   align-items:center;
-   justify-content: center;
-}

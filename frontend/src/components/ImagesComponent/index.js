@@ -1,60 +1,51 @@
 import { useSelector, useDispatch } from "react-redux";
-import {useEffect} from 'react';
-import {getItem} from '../store/items';
-
-const imagesComp = ()=> {
-    const dispatch = useDispatch();
-    const images = useSelector
-}
+import {useEffect, useState} from 'react';
+import {getImage, upload} from '../../store/images';
+// import { useHistory } from 'react-router-dom';
+import './ImagesComponent.css';
 
 
-//TODO need to finish this too
+const Profile = () => {
+const sessionUser = useSelector(state => state.session.user);
+// const [userId, setUserId] = useState(sessionUser.id);
+const userId = sessionUser.id;
+const [imageUrl, setImageUrl] = useState('');
+const [toggle, setToggle] = useState(true);
+// const history = useHistory();
+const dispatch = useDispatch();
+const images = useSelector(state => state.images[userId])
+useEffect(()=>{
+  dispatch(getImage(userId))
+    },[dispatch, toggle])
 
+    const handleSubmit = async (e) => {
+      e.preventDefault();
 
-
-
-
-
-
-
-
-
-const PokemonItems = ({ pokemon, setEditItemId }) => {
-    const dispatch = useDispatch();
-    const items = useSelector((state) => {
-      if (!pokemon.items) return null;
-      return pokemon.items.map(itemId => state.items[itemId]);
-    });
-
-    useEffect(()=> {
-      dispatch(getItem(pokemon.id));
-    }, [dispatch, pokemon.id]);
-
-    if (!items) {
-      return null;
+      const payload = {
+        userId,
+        imageUrl,
+      };
+      const addImage = await dispatch(upload(payload));
+      setToggle(!toggle);
+      // if (addImage) {
+      //   history.push(`/images/${userId}`)
+      // }
+      setImageUrl('');
     }
+    return (
+      <div>
+        <div className="image-url">
+        <form onSubmit={handleSubmit}>
+          <input type="text" value={imageUrl} onChange={((e)=> setImageUrl(e.target.value))} placeholder="url goes here"></input>
+          <button type="submit">Submit</button>
+        </form>
+        </div>
+        <div className="image-page">
+        {images?.images.map(image=> <img src={image.imageUrl} key={image.id} alt='profile' className='the-images' />)}
+        </div>
+      </div>
+    );
 
-    return items.map((item) => (
-      <tr key={item.id}>
-        <td>
-          <img
-            className="item-image"
-            alt={item.imageUrl}
-            src={`${item.imageUrl}`}
-          />
-        </td>
-        <td>{item.name}</td>
-        <td className="centered">{item.happiness}</td>
-        <td className="centered">${item.price}</td>
-        {pokemon.captured && (
-          <td className="centered">
-            <button onClick={() => setEditItemId(item.id)}>
-              Edit
-            </button>
-          </td>
-        )}
-      </tr>
-    ));
   };
 
-  export default PokemonItems;
+  export default Profile;

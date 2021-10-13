@@ -15,4 +15,10 @@ router.get('/:id', asyncHandler(async function(req, res){
     return res.json({images});
 }));
 
+router.post('/new', asyncHandler(async function(req, res){
+    console.log("INSIDE POST ROUTE",req.body)
+    const {userId, imageUrl} = req.body;
+    const image = await imageRepo.postImage(userId, imageUrl);
+    return res.json({image});
+}))
 module.exports = router;

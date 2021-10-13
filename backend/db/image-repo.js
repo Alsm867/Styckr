@@ -1,6 +1,6 @@
 const { Image } = require("./models");
-const image = require("./models/image");
-
+// const image = require("./models/image");
+//
 async function list() {
   return await Image.findAll();
 }
@@ -17,8 +17,9 @@ async function findImageByUserId(userId) {
   });
 }
 
-async function postImage(imageData) {
-  const newImage = await image.create(imageData);
+async function postImage(userId, imageUrl) {
+  console.log("INSIDE POSTIMAGE", userId, imageUrl);
+  const newImage = await Image.create(userId, imageUrl);
   return newImage;
 }
 
