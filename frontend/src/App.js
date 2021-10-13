@@ -4,7 +4,8 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormModal from "./components/SignupFormModal";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import Profile from './components/ImagesComponent/index'
+import Profile from './components/ImagesComponent/index';
+import ImageDetail from "./components/ImageDetailComponent";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,9 +25,9 @@ function App() {
           <Route path='/images' >
             <Profile />
           </Route>
-          <Route path='/imagesDetail/:id'>
+          <Route path='/imagesDetail/:userId/:id'>
             {/* TODO create image detail component */}
-            {/* <ImageDetail /> */}
+            <ImageDetail />
           </Route>
         </Switch>
       )}

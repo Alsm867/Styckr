@@ -41,7 +41,10 @@ useEffect(()=>{
         </form>
         </div>
         <div className="image-page">
-        {images?.images.map(image=> <img src={image.imageUrl} key={image.id} alt='profile' className='the-images' />)}
+        {images?.images.map(image=>
+          <a href={`/imagesDetail/${userId}/${image.id}`} key={image.id}>
+            <img src={image.imageUrl}  alt='profile' className='the-images' />
+          </a>)}
         </div>
       </div>
     );
