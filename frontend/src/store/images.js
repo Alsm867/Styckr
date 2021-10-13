@@ -35,7 +35,6 @@ export const getImage = (userId) => async (dispatch) => {
   });
   if (response.ok) {
     const images = await response.json();
-    console.log(images);
     dispatch(addImage(images, userId));
   }
 };
