@@ -3,8 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Image = sequelize.define('Image', {
     userId: DataTypes.INTEGER,
     albumId: DataTypes.INTEGER,
-    imageUrl: DataTypes.STRING,
-    content: DataTypes.TEXT
+    imageUrl: DataTypes.STRING
   }, {});
   Image.associate = function(models) {
     Image.belongsTo(models.User, {foreignKey: 'userId'});
@@ -12,4 +11,3 @@ module.exports = (sequelize, DataTypes) => {
   };
   return Image;
 };
-

@@ -37,12 +37,17 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
+    <nav id='nav-tag'>
+      <NavLink exact to="/">
+        <img className="logo" src='https://res.cloudinary.com/dzjkwepju/image/upload/v1634073984/Styckr/Untitled_design_2_pzy5ri.png' alt="logo"/>
+      </NavLink>
+      <div className='isLoaded'>
         {isLoaded && sessionLinks}
-      </li>
-    </ul>
+
+      </div>
+
+    </nav>
+
   );
 }
 

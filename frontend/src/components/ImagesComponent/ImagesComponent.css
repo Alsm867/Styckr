@@ -1,0 +1,22 @@
+.image-page{
+    background-color: rgba(0, 56, 0, 0.726);
+    display:flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.the-images{
+    width: 200px;
+    height: 200px;
+    margin: 3px;
+}
+
+.image-url{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
