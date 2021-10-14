@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { viewImage, deleteImage } from "../../store/images";
 import {useParams} from 'react-router-dom';
+import DeleteButtonModal from '../DeleteModal/index';
 import "./ImageDetailComponent.css";
 
 const ImageDetail = () => {
@@ -9,15 +10,16 @@ const ImageDetail = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
   const dispatch = useDispatch();
-  const {imageId} = useParams();
+  const imageId = useParams();
   useEffect(() => {
     dispatch(viewImage(userId, imageId));
   }, [dispatch, userId, imageId]);
-  const images = useSelector((state) => Object.values(state.images));
+  const images = useSelector(state => state.images)
   console.log("INSIDE IMAGE DATAIL COMP", imageId)
 
   console.log("LOGGING IMAGES IN STATE", images)
 
+  console.log(userId)
 
   const image = images?.image
 
@@ -33,8 +35,8 @@ const ImageDetail = () => {
     <div className="single-image-page">
       <img
         className="single-image"
-        src={images.imageUrl}
-        key={images.imageUrl}
+        src={image}
+        key={image}
         alt="forest"
       />
       <form onSubmit={handleSubmit} className="submit-comment">
@@ -42,6 +44,7 @@ const ImageDetail = () => {
         <button type="submit" className="submit-bttn">
           Submit
         </button>
+        <DeleteButtonModal/>
       </form>
     </div>
   );

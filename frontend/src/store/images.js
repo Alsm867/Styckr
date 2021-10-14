@@ -37,10 +37,12 @@ const removeImage = (image) => {
 
 //action creators
 export const viewImage = (userId, id) => async (dispatch) => {
-  const response = await fetch(`/api/images/${userId}/${id}`);
+  const response = await fetch(`/api/images/${userId}/${id.imageId}`);
   if(response.ok){
-  const image = await response.json();
-  dispatch(getImage(image.image))
+    const image = await response.json();
+
+    console.log("IN VIEW IMAGE CREATER",image)
+  dispatch(getImage(image.image.imageUrl))
   }
 }
 
@@ -56,10 +58,14 @@ export const addingImage = (userId) => async (dispatch) => {
 };
 
 export const deleteImage = (imageId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/images/${imageId}`, {
+  const response = await csrfFetch(`/api/images/${imageId}/delete`, {
+
     method: 'DELETE',
 
   })
+  const image = await response.json()
+  console.log("IN DELETE IMAGE ", image)
+  dispatch(removeImage(image))
 }
 
 export const upload = (userId, imageUrl) => async (dispatch) => {
