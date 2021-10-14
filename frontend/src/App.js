@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import Profile from './components/ImagesComponent/index';
 import ImageDetail from "./components/ImageDetailComponent";
 import AllImages from "./components/AllImagesComponent";
+import FooterComponent from "./components/FooterComponent";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ function App() {
             <div className='main-home'>
 
               <h1 className='styckr'>Styckr</h1>
-              <p className='a-place'>A place to share your adventure through many forests!</p>
+              <p className='a-place'>A place where you can share your adventures you've had in the different forests around the world!</p>
             </div>
           </Route>
           <Route exact path="/images">
@@ -41,7 +42,7 @@ function App() {
           </Route>
         </Switch>
       )}
-
+      <FooterComponent />
     </>
   );
 }

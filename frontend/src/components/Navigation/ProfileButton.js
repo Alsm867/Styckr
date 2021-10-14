@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
 import './Navigation.css'
 
 function ProfileButton({ user }) {
+  const sessionUser = useSelector(state => state.session.user);
+  const userId = sessionUser.id;
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -32,12 +34,13 @@ function ProfileButton({ user }) {
   return (
     <>
       <button onClick={openMenu}>
-        <i className="far fa-user"></i>
+        <i className="fas fa-bars "></i>
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.username}</li>
+          <li><a className="user-profile-button" href={`/images/${userId}`}>{user.username}'s Profile</a></li>
           <li>{user.email}</li>
+          <li><a href='/images' className='to-the-images'>Images</a></li>
           <li>
             <button onClick={logout}>Log Out</button>
           </li>
