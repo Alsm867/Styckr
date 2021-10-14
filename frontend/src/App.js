@@ -19,6 +19,13 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path='/'>
+            <div className='main-home'>
+
+              <h1 className='styckr'>Styckr</h1>
+              <p className='a-place'>A place to share your adventure through many forests!</p>
+            </div>
+          </Route>
           <Route path="/signup">
             <SignupFormModal />
           </Route>

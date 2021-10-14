@@ -3,7 +3,7 @@ import { Modal } from '../../context/Modal';
 import DeleteModal from './Delete-modal';
 import './Delete-modal.css';
 
-function DeleteButtonModal() {
+function DeleteButtonModal({imageId}) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -11,7 +11,7 @@ function DeleteButtonModal() {
       <button className='delete-button' onClick={() => setShowModal(true)}>Delete</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <DeleteModal showModal={setShowModal} />
+          <DeleteModal showModal={setShowModal} imageId={imageId}/>
         </Modal>
       )}
     </>

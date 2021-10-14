@@ -44,7 +44,7 @@ const ImageDetail = () => {
         <button type="submit" className="submit-bttn">
           Submit
         </button>
-        <DeleteButtonModal/>
+        <DeleteButtonModal imageId={imageId}/>
       </form>
     </div>
   );

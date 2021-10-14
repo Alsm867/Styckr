@@ -58,14 +58,17 @@ export const addingImage = (userId) => async (dispatch) => {
 };
 
 export const deleteImage = (imageId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/images/${imageId}/delete`, {
+  console.log("IN THE DELETE IMAGE!!!",imageId);
+  const response = await csrfFetch(`/api/images/${imageId}`, {
 
     method: 'DELETE',
 
   })
-  const image = await response.json()
-  console.log("IN DELETE IMAGE ", image)
-  dispatch(removeImage(image))
+  if (response.ok) {
+    const deletedImage = await response.json();
+    return dispatch(removeImage(deletedImage));
+  }
+
 }
 
 export const upload = (userId, imageUrl) => async (dispatch) => {

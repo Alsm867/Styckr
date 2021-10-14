@@ -4,12 +4,13 @@ import { useDispatch } from "react-redux";
 import deleteImage from "../../store/images";
 import './Delete-modal.css';
 
-function DeleteButton({showModal}) {
+function DeleteButton({showModal, imageId}) {
   const dispatch = useDispatch();
-
+  const deleteId = imageId.imageId
+  console.log("THIS IS IN THE DELETE BUTTON", deleteId)
   const handleDelete = (e) =>{
     e.preventDefault();
-    deleteImage()
+    return (dispatch(deleteImage({deleteId})))
   }
   const handleCancelClick = (e) => {
     e.preventDefault();

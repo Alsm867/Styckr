@@ -20,8 +20,9 @@ router.get('/:userId/:imageId', asyncHandler(async function(req, res){
     return res.json({image});
 }))
 
-router.get('/images/:imageId/delete', asyncHandler(async function(req, res){
-    const image = await imageRepo.deleteImage(req.params.imageId);
+router.delete('/:imageId', asyncHandler(async function(req, res){
+    let {imageId} = req.params
+    const image = await imageRepo.deleteImage(imageId);
 }))
 
 router.post('/new', asyncHandler(async function(req, res){
