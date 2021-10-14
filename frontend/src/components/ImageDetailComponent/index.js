@@ -19,7 +19,7 @@ const ImageDetail = () => {
 
   console.log("LOGGING IMAGES IN STATE", images)
 
-  console.log(userId)
+  console.log("FOR RYAN!!!", userId)
 
   const image = images?.image
 
@@ -44,7 +44,7 @@ const ImageDetail = () => {
         <button type="submit" className="submit-bttn">
           Submit
         </button>
-        <DeleteButtonModal imageId={imageId}/>
+        <DeleteButtonModal imageId={imageId} userId={userId}/>
       </form>
     </div>
   );

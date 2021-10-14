@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
-import deleteImage from "../../store/images";
+import {useHistory} from 'react-router-dom';
+import {deleteImage} from "../../store/images";
 import './Delete-modal.css';
 
-function DeleteButton({showModal, imageId}) {
+function DeleteButton({showModal, imageId, userId}) {
   const dispatch = useDispatch();
+  const history = useHistory();
   const deleteId = imageId.imageId
   console.log("THIS IS IN THE DELETE BUTTON", deleteId)
   const handleDelete = (e) =>{
     e.preventDefault();
-    return (dispatch(deleteImage({deleteId})))
+    dispatch(deleteImage(deleteId))
+    history.push(`/images/${userId}`)
   }
   const handleCancelClick = (e) => {
     e.preventDefault();

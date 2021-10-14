@@ -23,9 +23,10 @@ async function postImage(userId, imageUrl) {
 
 async function deleteImage(imageId) {
   const image = await Image.findOne({
-    where: { id },
+    where: { id: imageId },
   });
   image.destroy();
+  return imageId;
 }
 
 module.exports = {

@@ -28,10 +28,10 @@ const addImage = (images, userId) => {
   };
 };
 
-const removeImage = (image) => {
+const removeImage = (imageId) => {
   return {
     type: REMOVE_IMAGE,
-    image,
+    imageId,
   };
 };
 
@@ -65,9 +65,9 @@ export const deleteImage = (imageId) => async (dispatch) => {
 
   })
   if (response.ok) {
-    const deletedImage = await response.json();
-    console.log("IN THE DELETE IMAGE!!!",deletedImage);
-    return dispatch(removeImage(deletedImage));
+    const deletedImageId = await response.json();
+    console.log("IN THE DELETE IMAGE!!!",deletedImageId);
+    return dispatch(removeImage(deletedImageId.imageId));
   }
 
 }
@@ -103,7 +103,9 @@ const imageReducer = (state = initialState, action) => {
       return newState;
     case REMOVE_IMAGE:
       newState = {...state}
-      delete newState.images[action.payload.userId];
+      console.log("IN IMAGE REDUCER", state)
+      debugger
+      delete newState.images[action.imageId];
       return newState;
     default:
       return state;
