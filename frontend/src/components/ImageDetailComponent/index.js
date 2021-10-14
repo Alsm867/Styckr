@@ -24,6 +24,7 @@ const singleImage = useSelector(state => state.images.image)
 
   return (
     <div className="single-image-page">
+      <DeleteButtonModal imageId={imageId} userId={userId}/>
       <img
         className="single-image"
         src={singleImage}
@@ -34,7 +35,6 @@ const singleImage = useSelector(state => state.images.image)
         <button type="submit" className="submit-bttn">
           Submit
         </button>
-        <DeleteButtonModal imageId={imageId} userId={userId}/>
       </form>
     </div>
   );

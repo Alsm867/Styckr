@@ -1,15 +1,17 @@
 .single-image-page{
-    margin-top: 30px;
+    margin-top: 5px;
     background-color: rgba(0, 56, 0, 0.726);
+    height: 650px;
     display:flex;
     border-radius: 5px;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
 .submit-comment{
-    padding: 5px;
+    margin: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,9 +19,9 @@
 }
 
 .single-image{
-    margin-top: 50px;
+    margin-top: 10px;
     width: 720px;
-    height: 600px;
+    height: 560px;
 }
 
 .submit-bttn{

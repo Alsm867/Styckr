@@ -8,7 +8,7 @@ function DeleteButtonModal({imageId, userId}) {
 
   return (
     <>
-      <button className='delete-button' onClick={() => setShowModal(true)}>Delete</button>
+      <button className='delete-button' onClick={() => setShowModal(true)}>Delete Image</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <DeleteModal showModal={setShowModal} imageId={imageId} userId={userId}/>
