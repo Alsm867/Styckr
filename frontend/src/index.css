@@ -1,1 +1,25 @@
 /* TODO Add site wide styles */
+.main-home{
+    background-color: rgba(0, 56, 0, 0.87);
+    border-radius: 10px;
+    margin-top: 110px;
+    text-align: center;
+    width: 500px;
+    height: 380px;
+    margin-left: 500px;
+}
+
+.styckr{
+    /* color:rgb(0, 164, 240); */
+    color: white;
+    font-size: 70px;
+    margin-left: 0px;
+}
+
+.a-place{
+    /* color: rgb(0, 255, 0); */
+    color: white;
+    font-size: 50px;
+    width: 375px;
+    margin-left: 70px;
+}

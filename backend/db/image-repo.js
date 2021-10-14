@@ -6,9 +6,9 @@ async function list() {
 }
 
 async function findImagebyPk(id) {
-  return await Image.findOne({
-    where: { id },
-  });
+  const variable = await Image.findByPk(id);
+  console.log('INSIDE FIND BY PK', variable)
+  return variable
 }
 
 async function findImageByUserId(userId) {
@@ -25,9 +25,10 @@ async function postImage(userId, imageUrl) {
 
 async function deleteImage(imageId) {
   const image = await Image.findOne({
-    where: { id },
+    where: { id: imageId },
   });
   image.destroy();
+  return imageId;
 }
 
 module.exports = {

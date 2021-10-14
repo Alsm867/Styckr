@@ -38,7 +38,7 @@
 }
 
 .home-back {
-    background-image: url("../../images/1.jpg");
+    background-image: url("https://res.cloudinary.com/dzjkwepju/image/upload/v1634223704/Styckr/z_luniav.jpg");
     animation: chbg 10s infinite alternate;
     background-size: cover;
     /* animation-timing-function: ease-in-out;
@@ -48,15 +48,15 @@
 
   @keyframes chbg {
     50% {
-      background-image: url("../../images/2.jpg");
+      background-image: url("https://res.cloudinary.com/dzjkwepju/image/upload/v1634223700/Styckr/zz_souyxf.jpg");
       background-size: cover;
     }
     80% {
-      background-image: url("../../images/3.jpg");
+      background-image: url("https://res.cloudinary.com/dzjkwepju/image/upload/v1634223693/Styckr/zzzz_frsbhv.jpg");
       background-size: cover;
     }
     100% {
-      background-image: url("../../images/4.jpg");
+      background-image: url("https://res.cloudinary.com/dzjkwepju/image/upload/v1634223696/Styckr/zzz_ay07gu.jpg");
       background-size: cover;
     }
   }
