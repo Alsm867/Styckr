@@ -58,7 +58,7 @@ export const addingImage = (userId) => async (dispatch) => {
 };
 
 export const deleteImage = (imageId) => async (dispatch) => {
-  console.log("IN THE DELETE IMAGE!!!",imageId);
+  // console.log("IN THE DELETE IMAGE!!!",imageId);
   const response = await csrfFetch(`/api/images/${imageId}`, {
 
     method: 'DELETE',
@@ -66,6 +66,7 @@ export const deleteImage = (imageId) => async (dispatch) => {
   })
   if (response.ok) {
     const deletedImage = await response.json();
+    console.log("IN THE DELETE IMAGE!!!",deletedImage);
     return dispatch(removeImage(deletedImage));
   }
 
@@ -101,7 +102,7 @@ const imageReducer = (state = initialState, action) => {
       newState[action.userId] = action.payload;
       return newState;
     case REMOVE_IMAGE:
-      newState = Object.assign({}, state);
+      newState = {...state}
       delete newState.images[action.payload.userId];
       return newState;
     default:
