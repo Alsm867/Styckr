@@ -1,27 +1,3 @@
-.home-back {
-  background-image: url("./images/1.jpg");
-  animation: chbg 10s infinite alternate;
-  background-size: cover;
-  /* animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate; */
-}
-
-@keyframes chbg {
-  50% {
-    background-image: url("./images/2.jpg");
-    background-size: cover;
-  }
-  80% {
-    background-image: url("./images/3.jpg");
-    background-size: cover;
-  }
-  100% {
-    background-image: url("./images/4.jpg");
-    background-size: cover;
-  }
-}
-
 #root{
     width: 100%;
     background-color: rgba(36, 41, 41, 0.568);

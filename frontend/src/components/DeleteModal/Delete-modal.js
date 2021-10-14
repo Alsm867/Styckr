@@ -8,11 +8,11 @@ import './Delete-modal.css';
 function DeleteButton({showModal, imageId, userId}) {
   const dispatch = useDispatch();
   const history = useHistory();
-  const deleteId = imageId.imageId
+  const deleteId = imageId
   console.log("THIS IS IN THE DELETE BUTTON", deleteId)
   const handleDelete = (e) =>{
     e.preventDefault();
-    dispatch(deleteImage(deleteId))
+    dispatch(deleteImage(deleteId, userId))
     history.push(`/images/${userId}`)
   }
   const handleCancelClick = (e) => {

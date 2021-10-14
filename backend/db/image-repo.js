@@ -6,7 +6,9 @@ async function list() {
 }
 
 async function findImagebyPk(id) {
-  return await Image.findByPk(id);
+  const variable = await Image.findByPk(id);
+  console.log('INSIDE FIND BY PK', variable)
+  return variable
 }
 
 async function findImageByUserId(userId) {

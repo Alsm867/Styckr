@@ -10,21 +10,12 @@ const ImageDetail = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
   const dispatch = useDispatch();
-  const imageId = useParams();
+  const {imageId} = useParams();
   useEffect(() => {
     dispatch(viewImage(userId, imageId));
   }, [dispatch, userId, imageId]);
-  const images = useSelector(state => state.images)
-  console.log("INSIDE IMAGE DATAIL COMP", imageId)
 
-  console.log("LOGGING IMAGES IN STATE", images)
-
-  console.log("FOR RYAN!!!", userId)
-
-  const image = images?.image
-
-  console.log(image)
-
+const singleImage = useSelector(state => state.images.image)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,8 +26,7 @@ const ImageDetail = () => {
     <div className="single-image-page">
       <img
         className="single-image"
-        src={image}
-        key={image}
+        src={singleImage}
         alt="forest"
       />
       <form onSubmit={handleSubmit} className="submit-comment">
