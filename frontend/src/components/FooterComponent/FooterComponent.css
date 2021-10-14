@@ -1,0 +1,25 @@
+.Footer {
+  color: rgb(0, 255, 0);
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.781);
+  border-radius: 10px;
+  height: 70px;
+  position:fixed;
+  margin-top: 142px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.git{
+    height: 30px;
+    width: 30px;
+}
+
+.my-hub{
+    color: rgb(0, 255, 0);
+    text-decoration: none;
+}

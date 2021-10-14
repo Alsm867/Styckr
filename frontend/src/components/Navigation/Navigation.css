@@ -8,8 +8,32 @@
     margin: 10px;
 }
 
+.to-the-images{
+  text-decoration: none;
+  color: rgb(255, 174, 0);
+  padding: 3px;
+  border-radius: 5px;
+  border: solid rgb(255, 174, 0) 1px;
+  background-color: rgb(61, 37, 0);
+}
+
+.user-profile-button{
+  text-decoration: none;
+  color: rgb(0, 217, 255);
+  padding: 3px;
+  border-radius: 5px;
+  border: solid rgb(30, 255, 0) 1px;
+  background-color: rgb(7, 61, 0);
+}
+
 .profile-dropdown{
   color:rgb(21, 255, 0);
+  margin-right: 10px;
+}
+
+.profile-dropdown li {
+  list-style-type: none;
+  margin: 5px;
 }
 
 .logo{
