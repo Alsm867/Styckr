@@ -6,6 +6,7 @@ import "./CommentsComponent.css";
 
 
 const Comments = () => {
+    //almost done here
     const dispatch = useDispatch();
     const comment = useSelector((state) => state.comments.comments.comments);
     useEffect(() => {
