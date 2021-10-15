@@ -10,11 +10,29 @@ module.exports = {
       */
       return queryInterface.bulkInsert('Comments', [{
       userId: 4,
+      userName: 'John',
       imageId: 1,
-      comment: 'this is a test comment',
+      comment: 'such a nice picture',
       createdAt: new Date(),
       updatedAt: new Date()
-      }], {});
+      },
+      {
+        userId: 4,
+        userName: 'John',
+        imageId: 1,
+        comment: 'really cool',
+        createdAt: new Date(),
+        updatedAt: new Date()
+        },
+        {
+          userId: 1,
+          userName: 'Demo-lition',
+          imageId: 1,
+          comment: "it's just okay...",
+          createdAt: new Date(),
+          updatedAt: new Date()
+          }
+    ], {});
   },
 
   down: (queryInterface, Sequelize) => {
