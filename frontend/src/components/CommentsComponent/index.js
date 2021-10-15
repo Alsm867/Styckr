@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { viewComments } from "../../store/comments";
 import DeleteCommentsModal from "../DeleteCommentsModal";
+import EditButton from "../EditCommentComponent";
 import "./CommentsComponent.css";
 
 const Comments = ({ imageId, userId, comments }) => {
@@ -10,19 +11,20 @@ const Comments = ({ imageId, userId, comments }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(viewComments());
-  }, [dispatch]);
+    dispatch(viewComments(imageId));
+  }, [dispatch, imageId]);
   return (
     <div className="comments">
       {comments?.map((comment) => (
           <div>
           <p key={comment.id}>{`${comment.userName}: ${comment.comment}`}</p>
         {comment.userId === userId ?
-          <DeleteCommentsModal
-                  imageId={imageId}
-                  userId={userId}
-                  comment={comment}
-                /> : ''}
+          <div>
+            <EditButton imageId={imageId} userId={userId} comment={comment}/>
+            <DeleteCommentsModal imageId={imageId} userId={userId} comment={comment}/>
+          </div>
+            : ''
+          }
         </div>
       ))}
     </div>

@@ -3,14 +3,13 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {useHistory, useParams} from 'react-router-dom';
 // import {deleteImage} from "../../store/images";
-import './Comments-Modal.css';
-import { PostComment } from "../../store/comments";
+import './EditCommentModal.css';
+import { editComment } from "../../store/comments";
 
-function CommentButton({showModal}) {
+function EditModal({showModal}) {
     const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const {imageId} = useParams();
-  const history = useHistory();
   const [comment, setComment] = useState()
   const handleComment = (e) =>{
       e.preventDefault();
@@ -20,7 +19,7 @@ function CommentButton({showModal}) {
           imageId: imageId,
           comment
       }
-      dispatch(PostComment(payload));
+      dispatch(editComment(payload, comment.id));
       showModal(false)
   }
   const handleCancelClick = (e) => {
@@ -46,4 +45,4 @@ function CommentButton({showModal}) {
     );
 }
 
-export default CommentButton;
+export default EditModal;
