@@ -5,26 +5,30 @@ import { viewComments } from "../../store/comments";
 import DeleteCommentsModal from "../DeleteCommentsModal";
 import "./CommentsComponent.css";
 
-const Comments = ({ imageId, userId, commentss }) => {
+const Comments = ({ imageId, userId, comments }) => {
   //almost done here
   const dispatch = useDispatch();
   const comment = useSelector((state) => state.comments.comments.comments);
-  const comments = useSelector((state) => state.comments.comments);
-//   let ha = comments.map(comment => comment.userId)
+
+  let something;
+
+    comment?.map(comment => {
+        if (comment.userId === userId){
+            something = (
+                <DeleteCommentsModal
+                  imageId={imageId}
+                  userId={userId}
+                  comments={comments}
+                />
+              );
+        }
+})
+
+
   useEffect(() => {
     dispatch(viewComments());
   }, [dispatch]);
-  console.log("INSIDE COMMENTS", comment.userId);
-  let something;
-  if (userId == comments.userId) {
-    something = (
-      <DeleteCommentsModal
-        imageId={imageId}
-        userId={userId}
-        comments={comments}
-      />
-    );
-  }
+  console.log("INSIDE COMMENTS");
   return (
     <div className="comments">
       {comment?.map((ele) => (
