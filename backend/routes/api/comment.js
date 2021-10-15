@@ -22,8 +22,12 @@ router.post('/', asyncHandler(async function(req, res){
 
 router.delete('/:commentId', asyncHandler(async function(req, res){
     let {commentId} = req.params
-    const comment = await imageRepo.deleteComment(commentId);
-    return res.json({commentId});
+    const comment = await commentRepo.deleteComment(commentId);
+    return res.json();
 }))
+
+// router.put('/', asyncHandler(async function(req, res){
+//     const comment = await commentRepo.
+// }))
 
 module.exports = router;

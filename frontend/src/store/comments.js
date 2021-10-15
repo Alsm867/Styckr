@@ -19,24 +19,21 @@ const addComment = (comment)=> {
     }
 }
 
-const deleteComment = (comment)=> {
+const deleteComment = ()=> {
     return {
         type: REMOVE_COMMENT,
-        comment
     }
 }
 
 export const deleteAComment = (commentId) => async (dispatch) => {
-    console.log("IN THE DELETE COMMENT!!!",commentId);
+    // console.log("IN THE DELETE COMMENT!!!",commentId[0].comment);
     const response = await csrfFetch(`/api/comments/${commentId}`, {
 
       method: 'DELETE',
 
     })
     if (response.ok) {
-      const{commentId} = await response.json();
-      console.log("IN THE DELETE IMAGE!!!",commentId);
-      return dispatch(deleteComment(commentId.commentId));
+      dispatch(deleteComment());
     }
 
   }
@@ -65,7 +62,6 @@ export const viewComments = () => async (dispatch) => {
 const initialState = {comments: []};
 
 const commentReducer = (state = initialState, action) => {
-    console.log("INSIDE COMMENT REDUCER",action)
     let newState;
     switch (action.type){
         case VIEW_COMMENT:
@@ -73,8 +69,9 @@ const commentReducer = (state = initialState, action) => {
             newState.comments = action.comment;
             return newState;
         case ADD_COMMENT:
-            newState = {...state, comment: [...state.comments.comments]};
-            newState.comments.comments.push(action.comment);
+            newState = {...state, comment: [...state.comments]};
+                console.log("INSIDE COMMENT REDUCER",state.comments)
+            newState.comments.push(action.comment);
             return newState;
         case REMOVE_COMMENT:
             newState = {...state}

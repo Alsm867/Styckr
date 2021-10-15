@@ -11,6 +11,19 @@ async function commentList() {
     });
   }
 
+async function updateComment(comment){
+  const id = comment.id;
+  delete comment.id;
+  await Comment.update(
+    comment,
+    {
+      where: {id},
+      
+
+    }
+    )
+}
+
   async function findCommentsByUserId(userId, imageId) {
     return await Comment.findAll({
       where: { userId, imageId },
@@ -23,8 +36,9 @@ async function commentList() {
   }
 
   async function deleteComment(commentId) {
-    const comment = findCommentbyPk(commentId)
-    comment.destroy();
+    const comment = await findCommentbyPk(commentId)
+    console.log("***************",comment)
+    await comment.destroy();
   }
 
   module.exports = {

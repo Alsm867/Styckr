@@ -15,6 +15,8 @@ const ImageDetail = () => {
   const dispatch = useDispatch();
   const {imageId} = useParams();
   const comments = useSelector((state) => state.comments.comments.comments)
+  // console.log('INSIDE IMAGE DETAIL',comments)
+  
   useEffect(() => {
     dispatch(viewImage(userId, imageId));
   }, [dispatch, userId, imageId]);

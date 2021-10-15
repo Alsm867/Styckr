@@ -5,20 +5,25 @@ import {useHistory} from 'react-router-dom';
 import {deleteAComment} from "../../store/comments";
 import './DeleteCommentsModal.css';
 
-function DeleteCommentsButton({showModal, imageId, userId, comments}) {
+function DeleteCommentsButton({setShowModal, imageId, userId, comment}) {
   const dispatch = useDispatch();
   const history = useHistory();
-  console.log("THIS IS IN THE DELETE BUTTON", comments);
+  console.log("THIS IS IN THE DELETE BUTTON", imageId);
 
+  // const ha = comment.map(comment => comment.comment)
+  // console.log("THIS IS WHAT HA IS: ",ha)
   const handleDelete = (e) =>{
     e.preventDefault();
-      dispatch(deleteAComment(comments))
-      history.push(`/images/${userId}/${imageId}`)
+
+
+      dispatch(deleteAComment(comment.id))
+      setShowModal(false)
+      // history.push(`/images/${userId}/${imageId}`)
     }
   const handleCancelClick = (e) => {
     e.preventDefault();
 
-    showModal(false)
+    setShowModal(false)
   };
 
 
