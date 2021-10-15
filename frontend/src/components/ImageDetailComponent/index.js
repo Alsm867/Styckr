@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { viewImage, deleteImage } from "../../store/images";
 import {useParams} from 'react-router-dom';
 import DeleteButtonModal from '../DeleteModal/index';
+import CommentButtonModal from '../CommentsModal/index';
+import Comments from '../CommentsComponent/index';
 import "./ImageDetailComponent.css";
 
 const ImageDetail = () => {
@@ -17,11 +19,6 @@ const ImageDetail = () => {
 
 const singleImage = useSelector(state => state.images.image)
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  };
-
-
   return (
     <div className="single-image-page">
       <DeleteButtonModal imageId={imageId} userId={userId}/>
@@ -30,12 +27,8 @@ const singleImage = useSelector(state => state.images.image)
         src={singleImage}
         alt="forest"
       />
-      <form onSubmit={handleSubmit} className="submit-comment">
-        <textarea type="text" />
-        <button type="submit" className="submit-bttn">
-          Submit
-        </button>
-      </form>
+      <Comments />
+      <CommentButtonModal />
     </div>
   );
 };
