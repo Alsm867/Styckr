@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import * as sessionActions from "../../store/session";
+// import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import {useHistory, useParams} from 'react-router-dom';
-import {deleteImage} from "../../store/images";
+// import {deleteImage} from "../../store/images";
 import './Comments-Modal.css';
 import { PostComment } from "../../store/comments";
 
