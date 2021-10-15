@@ -6,18 +6,19 @@ import {useHistory, useParams} from 'react-router-dom';
 import './EditCommentModal.css';
 import { editComment } from "../../store/comments";
 
-function EditModal({showModal}) {
+function EditModal({showModal, comment}) {
     const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const {imageId} = useParams();
-  const [comment, setComment] = useState()
+  const [commentBody, setComment] = useState()
   const handleComment = (e) =>{
       e.preventDefault();
       const payload = {
           userId: sessionUser.id,
           userName: sessionUser.username,
           imageId: imageId,
-          comment
+          commentBody,
+          id: comment.id
       }
       dispatch(editComment(payload, comment.id));
       showModal(false)
@@ -31,15 +32,15 @@ function EditModal({showModal}) {
   return (
     <div>
         <label>
-          Comment
+          Change your mind about the photo?
           <textarea
             name="comment"
-            value={comment}
+            value={commentBody}
             onChange={(e) => setComment(e.target.value)}
           />
         </label>
 
-      <button onClick={handleComment}>Comment</button>
+      <button onClick={handleComment}>Submit</button>
       <button onClick={handleCancelClick}>CANCEL</button>
     </div>
     );

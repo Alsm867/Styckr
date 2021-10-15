@@ -1,10 +1,10 @@
 import React, { useState} from 'react';
 import { Modal } from '../../context/Modal';
-import EditModal from './EditCommentModal.css';
+import EditModal from './EditCommentModal';
 import './EditCommentModal.css';
 
 
-function EditButton({imageId, userId}) {
+function EditButton({imageId, userId, comment}) {
     const [showModal, setShowModal] = useState(false);
 
     return (
@@ -12,7 +12,7 @@ function EditButton({imageId, userId}) {
         <button className='delete-button' onClick={() => setShowModal(true)}>Edit</button>
         {showModal && (
           <Modal onClose={() => setShowModal(false)}>
-            <EditModal showModal={setShowModal} imageId={imageId} userId={userId}/>
+            <EditModal showModal={setShowModal} imageId={imageId} userId={userId} comment={comment}/>
           </Modal>
         )}
       </>

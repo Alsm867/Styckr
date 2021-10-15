@@ -108,7 +108,7 @@ const commentReducer = (state = initialState, action) => {
       return newState;
       case UPDATE_COMMENT:{
           const index = state.comments.comments.findIndex(
-            (ele) => ele.id === action.comment.id
+            (ele) => ele?.id === action.comment.id
           );
           newState = {
             ...state,

@@ -27,9 +27,9 @@ router.delete('/:commentId', asyncHandler(async function(req, res){
 }))
 
 router.put("/:commentId", asyncHandler(async function (req, res) {
-    const UpdatedEvent = await comment.findByPk(req.params.id)
-    const id = req.body.id
-    delete req.body.id
+    const UpdatedEvent = await Comment.findByPk(req.params.commentId)
+    const id = req.params.commentId
+    delete req.body
     await UpdatedEvent.update(
       req.body,
       {where:{id},
