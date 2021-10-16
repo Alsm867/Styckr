@@ -24,12 +24,12 @@ const singleImage = useSelector(state => state.images.image)
 
   return (
     <div className="single-image-page">
-      <DeleteButtonModal imageId={imageId} userId={userId}/>
       <img
         className="single-image"
         src={singleImage}
         alt="forest"
       />
+      <DeleteButtonModal imageId={imageId} userId={userId}/>
       <Comments comments={comments} imageId={imageId} userId={userId} />
 
       <CommentButtonModal />

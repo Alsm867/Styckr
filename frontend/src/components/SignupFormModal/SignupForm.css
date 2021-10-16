@@ -9,7 +9,7 @@
 }
 
 .sign-up-form{
-        background-color: rgb(0, 2, 104);
+        background-color: rgb(19, 22, 211);
         border: solid 1px rgb(0, 162, 255);
         border-radius: 25px;
         width: 300px;
@@ -21,4 +21,8 @@
 
 .sign-cred{
         color:rgb(0, 162, 255);
+}
+
+.the-errors{
+        font-weight: bold;
 }

@@ -1,7 +1,7 @@
 .single-image-page{
     margin-top: 5px;
     background-color: rgba(0, 56, 0, 0.726);
-    border: solid 2px rgb(0, 255, 0);
+    border: solid 1px rgb(0, 255, 0);
     height: 750px;
     display:flex;
     border-radius: 5px;

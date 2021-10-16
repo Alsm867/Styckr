@@ -9,7 +9,7 @@
     background-color: rgb(126, 0, 0);
     border: solid 1px red;
     border-radius: 25px;
-    color: red;
+    color: rgb(0, 0, 0);
     width: 350px;
     height: 180px;
     display: flex;

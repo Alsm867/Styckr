@@ -1,5 +1,5 @@
 .the-comment{
-    background-color: rgb(0, 71, 50);
+    background-color: rgb(0, 116, 81);
     border-radius: 5px;
     border: solid 1px;
     border-color: rgb(0, 255, 179);
@@ -7,7 +7,7 @@
 }
 
 .user{
-    color: rgb(0, 255, 0);
+    color: rgb(0, 12, 119);
     font-weight: bold;
 }
 

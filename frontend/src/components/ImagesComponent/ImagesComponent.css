@@ -1,6 +1,6 @@
 .image-page{
     background-color: rgba(0, 56, 0, 0.726);
-    border: solid 2px rgb(0, 255, 0);
+    border: solid 1px rgb(0, 255, 0);
     margin-top: 10px;
     display:flex;
     flex-wrap: wrap;

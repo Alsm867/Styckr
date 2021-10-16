@@ -1,12 +1,16 @@
 .delete-image-button{
-    background-color: rgb(75, 0, 0);
-    border: solid 1px red;
+    background-color: rgb(105, 0, 0);
+    border: solid 1px rgb(255, 0, 0);
+    margin-top: 10px;
     color:rgb(255, 0, 0);
+    position: absolute;
+    bottom: 155px;
+    left: 145px;
     border-radius: 10px;
 }
 
 .modal-delete{
-    background-color: rgb(126, 0, 0);
+    background-color: rgb(136, 18, 18);
     border: solid 1px red;
     border-radius: 25px;
     width: 435px;
