@@ -28,8 +28,8 @@ function LoginForm() {
           ))}
         </ul>
 
-          <label>
-            Username or Email
+          <label className='login-cred'>
+            Username or Email <br/>
             <input
               type="text"
               value={credential}
@@ -37,8 +37,8 @@ function LoginForm() {
               required
             />
           </label>
-          <label>
-            Password
+          <label className='login-cred'>
+            Password <br/>
             <input
               type="password"
               value={password}

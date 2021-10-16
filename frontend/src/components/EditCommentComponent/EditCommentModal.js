@@ -30,18 +30,19 @@ function EditModal({showModal, comment}) {
   };
 
   return (
-    <div>
-        <label>
-          Change your mind about the photo?
+    <div className='comment-edit'>
+        <label className='change'>
+          Change your mind about the photo? <br/>
           <textarea
+          placeholder='Type Change Here'
             name="comment"
             value={commentBody}
             onChange={(e) => setComment(e.target.value)}
           />
         </label>
 
-      <button onClick={handleComment}>Submit</button>
-      <button onClick={handleCancelClick}>CANCEL</button>
+      <button className='yep' onClick={handleComment}>Yep!</button>
+      <button className='wait' onClick={handleCancelClick}>Wait No!!</button>
     </div>
     );
 }

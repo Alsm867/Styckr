@@ -9,7 +9,7 @@ function EditButton({imageId, userId, comment}) {
 
     return (
       <>
-        <button className='delete-button' onClick={() => setShowModal(true)}>Edit</button>
+        <button className='edit-button' onClick={() => setShowModal(true)}>Edit</button>
         {showModal && (
           <Modal onClose={() => setShowModal(false)}>
             <EditModal showModal={setShowModal} imageId={imageId} userId={userId} comment={comment}/>

@@ -1,0 +1,34 @@
+.comment-button{
+    background-color: rgb(0, 71, 50);
+    border: solid 1px rgb(0, 255, 179);
+    color:aqua;
+    border-radius: 10px;
+}
+
+.make-comment{
+    background-color: rgb(0, 71, 50);
+    border: solid 1px rgb(0, 255, 179);
+    border-radius: 25px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.place-comment{
+    background-color: rgb(0, 71, 50);
+    border: solid 1px rgb(0, 255, 179);
+    margin-top: 10px;
+    color:aqua;
+    border-radius: 10px;
+}
+
+.cancel-comment{
+    background-color: rgb(71, 71, 71);
+    border: solid 1px rgb(204, 204, 204);
+    margin-top: 10px;
+    color: rgb(204, 204, 204);
+    border-radius: 10px;
+}

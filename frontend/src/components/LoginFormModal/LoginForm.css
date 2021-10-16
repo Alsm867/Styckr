@@ -9,6 +9,17 @@
 }
 
 .form-in-login{
+    background-color: rgb(0, 70, 0);
+    border: solid 1px rgb(0, 255, 0);
+    border-radius: 25px;
+    width: 300px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+}
+
+.login-cred{
+    color:rgb(0, 245, 33);
+    padding: 15px;
 }

@@ -9,7 +9,7 @@ function CommentButtonModal({imageId, userId}) {
 
     return (
       <>
-        <button className='delete-button' onClick={() => setShowModal(true)}>Comment</button>
+        <button className='comment-button' onClick={() => setShowModal(true)}>Comment</button>
         {showModal && (
           <Modal onClose={() => setShowModal(false)}>
             <CommentButton showModal={setShowModal} imageId={imageId} userId={userId}/>

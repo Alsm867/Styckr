@@ -37,7 +37,7 @@ useEffect(()=>{
         <div className="image-url">
         <form onSubmit={handleSubmit}>
           <input type="text" value={imageUrl} onChange={((e)=> setImageUrl(e.target.value))} placeholder="url goes here"></input>
-          <button type="submit">Submit</button>
+          <button className='submit-image' type="submit">Submit</button>
         </form>
         </div>
         <div className="image-page">

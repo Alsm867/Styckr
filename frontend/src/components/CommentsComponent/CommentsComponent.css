@@ -1,0 +1,16 @@
+.the-comment{
+    background-color: rgb(0, 71, 50);
+    border-radius: 5px;
+    border: solid 1px;
+    border-color: rgb(0, 255, 179);
+    padding: 3px;
+}
+
+.user{
+    color: rgb(0, 255, 0);
+    font-weight: bold;
+}
+
+.user-comment{
+    color:aqua;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {useHistory} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import * as sessionActions from "../../store/session";
 import './Navigation.css'
 
@@ -42,11 +43,11 @@ function ProfileButton({ user }) {
       {showMenu && (
         //TODO change the a tags to Nav Links!!!!!!
         <ul className="profile-dropdown">
-          <li><a className="user-profile-button" href={`/images/${userId}`}>{user.username}'s Profile</a></li>
-          <li>{user.email}</li>
-          <li><a href='/images' className='to-the-images'>Images</a></li>
+          <li><NavLink className="user-profile-button" to={`/images/${userId}`}>{user.username}'s Profile</NavLink></li>
+          <li>Email: {user.email}</li>
+          <li><NavLink to='/images' className='to-the-images'>Images</NavLink></li>
           <li>
-            <button onClick={logout}>Log Out</button>
+            <button className='log-out' onClick={logout}>Log Out</button>
           </li>
         </ul>
       )}

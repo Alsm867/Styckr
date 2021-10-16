@@ -1,7 +1,8 @@
 .single-image-page{
     margin-top: 5px;
     background-color: rgba(0, 56, 0, 0.726);
-    height: 650px;
+    border: solid 2px rgb(0, 255, 0);
+    height: 750px;
     display:flex;
     border-radius: 5px;
     flex-direction: column;
@@ -21,7 +22,7 @@
 .single-image{
     margin-top: 10px;
     width: 720px;
-    height: 560px;
+    height: 500px;
 }
 
 .submit-bttn{
