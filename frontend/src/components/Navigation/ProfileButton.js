@@ -40,6 +40,7 @@ function ProfileButton({ user }) {
         <i className="fas fa-bars "></i>
       </button>
       {showMenu && (
+        //TODO change the a tags to Nav Links!!!!!!
         <ul className="profile-dropdown">
           <li><a className="user-profile-button" href={`/images/${userId}`}>{user.username}'s Profile</a></li>
           <li>{user.email}</li>

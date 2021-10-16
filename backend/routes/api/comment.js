@@ -20,4 +20,20 @@ router.post('/', asyncHandler(async function(req, res){
     return res.json({newComment});
 }))
 
+router.delete('/:commentId', asyncHandler(async function(req, res){
+    let {commentId} = req.params
+    const comment = await commentRepo.deleteComment(commentId);
+    return res.json();
+}))
+
+router.put("/:commentId", asyncHandler(async function (req, res) {
+    const UpdatedEvent = await Comment.findByPk(req.params.commentId)
+    const id = req.params.commentId
+    await UpdatedEvent.update(
+      req.body
+    )
+    return res.json({UpdatedEvent});
+  }));
+
+
 module.exports = router;

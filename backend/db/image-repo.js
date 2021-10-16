@@ -1,4 +1,4 @@
-const { Image } = require("./models");
+const { Image, User } = require("./models");
 // const image = require("./models/image");
 //
 async function list() {
@@ -6,9 +6,9 @@ async function list() {
 }
 
 async function findImagebyPk(id) {
-  const variable = await Image.findByPk(id);
-  console.log('INSIDE FIND BY PK', variable)
-  return variable
+  const image = await Image.findByPk(id);
+  console.log('INSIDE FIND BY PK', image)
+  return image
 }
 
 async function findImageByUserId(userId) {

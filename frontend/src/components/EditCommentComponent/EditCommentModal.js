@@ -3,24 +3,24 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {useHistory, useParams} from 'react-router-dom';
 // import {deleteImage} from "../../store/images";
-import './Comments-Modal.css';
-import { PostComment } from "../../store/comments";
+import './EditCommentModal.css';
+import { editComment } from "../../store/comments";
 
-function CommentButton({showModal}) {
+function EditModal({showModal, comment}) {
     const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const {imageId} = useParams();
-  const history = useHistory();
-  const [comment, setComment] = useState()
+  const [commentBody, setComment] = useState()
   const handleComment = (e) =>{
       e.preventDefault();
       const payload = {
           userId: sessionUser.id,
           userName: sessionUser.username,
           imageId: imageId,
-          comment
+          comment: commentBody,
+          id: comment.id
       }
-      dispatch(PostComment(payload));
+      dispatch(editComment(payload, comment.id));
       showModal(false)
   }
   const handleCancelClick = (e) => {
@@ -32,18 +32,18 @@ function CommentButton({showModal}) {
   return (
     <div>
         <label>
-          Comment
+          Change your mind about the photo?
           <textarea
             name="comment"
-            value={comment}
+            value={commentBody}
             onChange={(e) => setComment(e.target.value)}
           />
         </label>
 
-      <button onClick={handleComment}>Comment</button>
+      <button onClick={handleComment}>Submit</button>
       <button onClick={handleCancelClick}>CANCEL</button>
     </div>
     );
 }
 
-export default CommentButton;
+export default EditModal;
