@@ -17,10 +17,10 @@ const Comments = ({ imageId, userId, comments }) => {
     <div className="comments">
       {comments?.map((comment) => (
           <div>
-          <p key={comment.id}>{`${comment.userName}: ${comment.comment}`}</p>
+          <p className='the-comment' key={comment.id}><span className="user">{`${comment.userName}:`}</span> <br/> <span className='user-comment'>{`${comment.comment}`}</span></p>
         {comment.userId === userId ?
           <div>
-            <EditButton imageId={imageId} userId={userId} comment={comment}/>
+            <EditButton className='edit' imageId={imageId} userId={userId} comment={comment}/>
             <DeleteCommentsModal imageId={imageId} userId={userId} comment={comment}/>
           </div>
             : ''

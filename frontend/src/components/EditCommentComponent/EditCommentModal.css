@@ -1,0 +1,43 @@
+.edit-button{
+    border-radius: 10px;
+    background-color: rgb(0, 0, 71);
+    border: solid 1px blue;
+    color: blue;
+}
+
+.comment-edit{
+    background-color: rgb(0, 15, 99);
+    border: solid 1px blue;
+    border-radius: 25px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.change{
+    color:rgb(0, 174, 255);
+    margin-bottom: 10px;
+}
+
+textarea{
+    width: 220px;
+    height: 70px;
+}
+
+.wait{
+    background-color: rgb(70, 45, 0);
+    margin-top: 10px;
+    border: solid 1px orange;
+    color: orange;
+    border-radius: 10px;
+}
+
+.yep{
+    background-color: rgb(0, 0, 83);
+    border: solid 1px blue;
+    color: rgb(0, 81, 255);
+    border-radius: 10px;
+}

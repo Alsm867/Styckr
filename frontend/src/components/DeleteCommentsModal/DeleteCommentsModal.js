@@ -28,10 +28,10 @@ function DeleteCommentsButton({setShowModal, imageId, userId, comment}) {
 
 
   return (
-    <div>
-      <h2>Are you sure you want to DELETE this comment?</h2>
-      <button onClick={handleDelete}>Of Course</button>
-      <button onClick={handleCancelClick}>Nah...</button>
+    <div className='comment-delete'>
+      <h2>Regret this comment?</h2>
+      <button className='of-course' onClick={handleDelete}>Of Course!</button>
+      <button className='nah' onClick={handleCancelClick}>Nah...</button>
     </div>
     );
 }

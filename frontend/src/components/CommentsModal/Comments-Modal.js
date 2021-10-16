@@ -30,18 +30,16 @@ function CommentButton({showModal}) {
   };
 
   return (
-    <div>
-        <label>
-          Comment
+    <div className='make-comment'>
           <textarea
+          placeholder='Type Comment Here'
             name="comment"
             value={comment}
             onChange={(e) => setComment(e.target.value)}
           />
-        </label>
 
-      <button onClick={handleComment}>Comment</button>
-      <button onClick={handleCancelClick}>CANCEL</button>
+      <button className='place-comment' onClick={handleComment}>Comment</button>
+      <button className='cancel-comment' onClick={handleCancelClick}>CANCEL</button>
     </div>
     );
 }

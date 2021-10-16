@@ -1,0 +1,33 @@
+.delete-image-button{
+    background-color: rgb(75, 0, 0);
+    border: solid 1px red;
+    color:rgb(255, 0, 0);
+    border-radius: 10px;
+}
+
+.modal-delete{
+    background-color: rgb(126, 0, 0);
+    border: solid 1px red;
+    border-radius: 25px;
+    width: 435px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.delete-it{
+    background-color: rgb(71, 0, 0);
+    border: solid 1px red;
+    color: red;
+    border-radius: 25px;
+}
+
+.cancel-delete{
+    background-color: rgb(71, 71, 71);
+    margin-top: 10px;
+    border: solid 1px rgb(204, 204, 204);
+    color: rgb(204, 204, 204);
+    border-radius: 25px;
+}

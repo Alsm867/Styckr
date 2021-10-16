@@ -22,10 +22,10 @@ function DeleteButton({showModal, imageId, userId}) {
   };
 
   return (
-    <div>
+    <div className='modal-delete'>
       <h2>Are you sure you want to DELETE this?</h2>
-      <button onClick={handleDelete}>DELETE</button>
-      <button onClick={handleCancelClick}>CANCEL</button>
+      <button className='delete-it' onClick={handleDelete}>DELETE</button>
+      <button className='cancel-delete' onClick={handleCancelClick}>CANCEL</button>
     </div>
     );
 }
