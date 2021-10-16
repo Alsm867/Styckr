@@ -17,7 +17,7 @@ function EditModal({showModal, comment}) {
           userId: sessionUser.id,
           userName: sessionUser.username,
           imageId: imageId,
-          commentBody,
+          comment: commentBody,
           id: comment.id
       }
       dispatch(editComment(payload, comment.id));

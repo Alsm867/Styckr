@@ -40,7 +40,7 @@ export const editComment = (input, id) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      const { comment } = await response.json();
+        const { UpdatedEvent: comment } = await response.json();
       dispatch(updateComment(comment));
     }
   };
