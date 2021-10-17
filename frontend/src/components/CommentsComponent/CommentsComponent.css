@@ -1,5 +1,7 @@
 .the-comment{
     background-color: rgb(0, 116, 81);
+    text-align: center;
+    width: 200px;
     border-radius: 5px;
     border: solid 1px;
     border-color: rgb(0, 255, 179);
