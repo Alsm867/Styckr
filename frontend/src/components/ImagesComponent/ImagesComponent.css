@@ -1,7 +1,8 @@
 .image-page{
     background-color: rgba(0, 56, 0, 0.726);
     border: solid 1px rgb(0, 255, 0);
-    margin-top: 10px;
+    margin-top: 50px;
+    margin-bottom: 60px;
     display:flex;
     flex-wrap: wrap;
     border-radius: 5px;
@@ -20,7 +21,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 5px;
-    margin-top: 5px;
+    margin-top: 65px;
 }
 
 .submit-image{

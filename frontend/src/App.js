@@ -22,10 +22,13 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path='/'>
+            <div className='no-name'>
+
             <div className='main-home'>
 
               <h1 className='styckr'>Styckr</h1>
               <p className='a-place'>A place where you can share your adventures you've had in the different forests around the world!</p>
+            </div>
             </div>
           </Route>
           <Route exact path="/images">

@@ -64,7 +64,11 @@
     justify-content: space-between;
     width: 100%;
     background-color: rgba(36, 41, 41, 0.726);
-    border-radius: 5px;
+    /* border-radius: 5px; */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
 
 }
 

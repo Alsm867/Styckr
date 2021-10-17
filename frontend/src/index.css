@@ -1,4 +1,10 @@
 
+.no-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .main-home{
     background-color: rgba(0, 56, 0, 0.87);
     border-radius: 10px;
@@ -7,7 +13,7 @@
     text-align: center;
     width: 500px;
     height: 440px;
-    margin-left: 500px;
+    /* margin-left: 500px; */
 }
 
 .styckr{
