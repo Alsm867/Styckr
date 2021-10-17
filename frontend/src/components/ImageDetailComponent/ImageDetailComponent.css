@@ -4,6 +4,8 @@
     border: solid 1px rgb(0, 255, 0);
     height: 750px;
     display:flex;
+    margin-top: 60px;
+    margin-bottom: 60px;
     border-radius: 5px;
     flex-direction: column;
     flex-wrap: wrap;
