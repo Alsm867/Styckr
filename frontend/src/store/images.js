@@ -7,12 +7,12 @@ const VIEW_IMAGE = "images/view_image";
 const ALL_IMAGES = 'images/all_images';
 
 //actions
-const uploadImage = (image) => {
-  return {
-    type: ADD_IMAGE,
-    image,
-  };
-};
+// const uploadImage = (image) => {
+//   return {
+//     type: ADD_IMAGE,
+//     image,
+//   };
+// };
 
 const getImage = (image) => {
   return {
@@ -22,7 +22,7 @@ const getImage = (image) => {
 }
 
 const getAllImages = (images)=> {
-  console.log("INSIDE GET ALL IMAGES ACTION", images)
+  // console.log("INSIDE GET ALL IMAGES ACTION", images)
   return {
     type: ALL_IMAGES,
     images
@@ -46,12 +46,12 @@ const removeImage = (imageId, userId) => {
 
 //action creators
 export const viewAllImages = () => async (dispatch) => {
-  console.log("INSIDE VIEW ALL IMAGES")
+  // console.log("INSIDE VIEW ALL IMAGES")
   const response = await fetch(`/api/images/`);
   if(response.ok){
     const {images} = await response.json();
 
-    console.log("IN VIEW ALL IMAGES",images)
+    // console.log("IN VIEW ALL IMAGES",images)
   dispatch(getAllImages(images))
   }
 }
@@ -62,7 +62,7 @@ export const viewImage = (userId, id) => async (dispatch) => {
   if(response.ok){
     const image = await response.json();
 
-    console.log("IN VIEW IMAGE CREATER",image)
+    // console.log("IN VIEW IMAGE CREATER",image)
   dispatch(getImage(image.image.imageUrl))
   }
 }
@@ -79,7 +79,7 @@ export const addingImage = (userId) => async (dispatch) => {
 };
 
 export const deleteImage = (imageId, userId) => async (dispatch) => {
-  console.log("IN THE DELETE IMAGE!!!",imageId);
+  // console.log("IN THE DELETE IMAGE!!!",imageId);
   const response = await csrfFetch(`/api/images/${imageId}`, {
 
     method: 'DELETE',
@@ -87,7 +87,7 @@ export const deleteImage = (imageId, userId) => async (dispatch) => {
   })
   if (response.ok) {
     const{imageId} = await response.json();
-    console.log("IN THE DELETE IMAGE!!!",imageId);
+    // console.log("IN THE DELETE IMAGE!!!",imageId);
     return dispatch(removeImage(imageId.imageId, userId));
   }
 
@@ -128,7 +128,7 @@ const imageReducer = (state = initialState, action) => {
       return newState;
     case REMOVE_IMAGE:
       newState = {...state}
-      console.log("IN IMAGE REDUCER", state)
+      // console.log("IN IMAGE REDUCER", state)
       delete newState[action.imageId]
       return newState;
     default:

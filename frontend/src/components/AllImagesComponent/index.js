@@ -1,21 +1,20 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
-import { viewAllImages, deleteImage } from "../../store/images";
-import {useParams} from 'react-router-dom';
+import { useEffect } from "react";
+import { viewAllImages} from "../../store/images";
 
 const AllImages = () => {
     const sessionUser = useSelector(state => state.session.user);
     // const [userId, setUserId] = useState(sessionUser.id);
     const userId = sessionUser.id;
-    const [imageUrl, setImageUrl] = useState('');
-    const [toggle, setToggle] = useState(true);
+    // const [imageUrl, setImageUrl] = useState('');
+    // const [toggle, setToggle] = useState(true);
     // const history = useHistory();
     const dispatch = useDispatch();
     const images = useSelector(state => state.images.allImages)
-    console.log("INSIDE ALL IMAGES COMPONENT",  images)
+    // console.log("INSIDE ALL IMAGES COMPONENT",  images)
     useEffect(()=>{
       dispatch(viewAllImages())
-        },[])
+        },[dispatch])
 
         // const handleSubmit = async (e) => {
         //   e.preventDefault();

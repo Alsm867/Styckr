@@ -16,7 +16,7 @@ const dispatch = useDispatch();
 const images = useSelector(state => state.images[userId])
 useEffect(()=>{
   dispatch(addingImage(userId))
-    },[dispatch, toggle])
+    },[dispatch, toggle, userId])
 
     const handleSubmit = async (e) => {
       e.preventDefault();

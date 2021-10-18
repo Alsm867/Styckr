@@ -4,7 +4,7 @@ import DeleteCommentsButton from './DeleteCommentsModal';
 import './DeleteCommentsModal.css';
 
 function DeleteCommentsModal({imageId, userId, comment}) {
-  console.log('INSIDE INDEX', comment)
+  // console.log('INSIDE INDEX', comment)
   const [showModal, setShowModal] = useState(false);
 
   return (

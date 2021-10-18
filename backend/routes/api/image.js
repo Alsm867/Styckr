@@ -51,7 +51,7 @@ router.delete(
 router.post(
   "/new",
   asyncHandler(async function (req, res) {
-    console.log("INSIDE POST ROUTE", req.body);
+    // console.log("INSIDE POST ROUTE", req.body);
     const { userId, imageUrl } = req.body;
     const image = await imageRepo.postImage(userId, imageUrl);
     return res.json({ image });

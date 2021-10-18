@@ -18,7 +18,7 @@ async function updateComment(comment){
     comment,
     {
       where: {id},
-      
+
 
     }
     )
@@ -37,7 +37,7 @@ async function updateComment(comment){
 
   async function deleteComment(commentId) {
     const comment = await findCommentbyPk(commentId)
-    console.log("***************",comment)
+    // console.log("***************",comment)
     await comment.destroy();
   }
 

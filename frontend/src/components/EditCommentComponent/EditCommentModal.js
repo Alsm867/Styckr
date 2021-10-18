@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
-import {useHistory, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 // import {deleteImage} from "../../store/images";
 import './EditCommentModal.css';
 import { editComment } from "../../store/comments";

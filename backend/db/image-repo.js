@@ -7,7 +7,7 @@ async function list() {
 
 async function findImagebyPk(id) {
   const image = await Image.findByPk(id);
-  console.log('INSIDE FIND BY PK', image)
+  // console.log('INSIDE FIND BY PK', image)
   return image
 }
 
@@ -18,7 +18,7 @@ async function findImageByUserId(userId) {
 }
 
 async function postImage(userId, imageUrl) {
-  console.log("INSIDE POSTIMAGE", userId, imageUrl);
+  // console.log("INSIDE POSTIMAGE", userId, imageUrl);
   const newImage = await Image.create(userId, imageUrl);
   return newImage;
 }

@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import * as sessionActions from "../../store/session";
-import { useSelector, useDispatch } from "react-redux";
-import {useHistory} from 'react-router-dom';
+import React from "react";
+import { useDispatch } from "react-redux";
+// import {useHistory} from 'react-router-dom';
 import {deleteAComment} from "../../store/comments";
 import './DeleteCommentsModal.css';
 
 function DeleteCommentsButton({setShowModal, imageId, userId, comment}) {
   const dispatch = useDispatch();
-  const history = useHistory();
-  console.log("THIS IS IN THE DELETE BUTTON", imageId);
+  // const history = useHistory();
+  // console.log("THIS IS IN THE DELETE BUTTON", imageId);
 
   // const ha = comment.map(comment => comment.comment)
   // console.log("THIS IS WHAT HA IS: ",ha)

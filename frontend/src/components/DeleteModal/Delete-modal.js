@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import * as sessionActions from "../../store/session";
+import React from "react";
+// import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import {useHistory} from 'react-router-dom';
 import {deleteImage} from "../../store/images";
@@ -9,7 +9,7 @@ function DeleteButton({showModal, imageId, userId}) {
   const dispatch = useDispatch();
   const history = useHistory();
   const deleteId = imageId
-  console.log("THIS IS IN THE DELETE BUTTON", deleteId)
+  // console.log("THIS IS IN THE DELETE BUTTON", deleteId)
   const handleDelete = (e) =>{
     e.preventDefault();
     dispatch(deleteImage(deleteId, userId))
