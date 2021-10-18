@@ -34,3 +34,13 @@
     color: rgb(0, 17, 255);
     border-top: solid 1px rgb(0, 17, 255);
 }
+
+.exit-image{
+    text-decoration: none;
+    background-color: gray;
+    border-radius: 10px;
+    color: red;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+}

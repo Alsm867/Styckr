@@ -24,6 +24,7 @@ const singleImage = useSelector(state => state.images.image)
 
   return (
     <div className="single-image-page">
+      <a href='/images'><button className='exit-image' >X</button></a>
       <img
         className="single-image"
         src={singleImage}
