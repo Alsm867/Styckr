@@ -41,7 +41,6 @@ function ProfileButton({ user }) {
         <i className="fas fa-bars "></i>
       </button>
       {showMenu && (
-        //TODO change the a tags to Nav Links!!!!!!
         <ul className="profile-dropdown">
           <li><NavLink className="user-profile-button" to={`/images/${userId}`}>{user.username}'s Profile</NavLink></li>
           <li>Email: {user.email}</li>

@@ -5,9 +5,9 @@
     margin-bottom: 60px;
     display:flex;
     flex-wrap: wrap;
-    border-radius: 5px;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
 }
 
 .the-images{

@@ -75,23 +75,23 @@
 .home-back {
     background-image: url("https://res.cloudinary.com/dzjkwepju/image/upload/v1634223704/Styckr/z_luniav.jpg");
     animation: chbg 10s infinite alternate;
-    background-size: cover;
+    background-size: 1920px 1080px;
     /* animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate; */
   }
 
   @keyframes chbg {
-    50% {
+    0% {
       background-image: url("https://res.cloudinary.com/dzjkwepju/image/upload/v1634223700/Styckr/zz_souyxf.jpg");
-      background-size: cover;
+      background-size: 1920px 1080px;
     }
-    80% {
+    50% {
       background-image: url("https://res.cloudinary.com/dzjkwepju/image/upload/v1634223693/Styckr/zzzz_frsbhv.jpg");
-      background-size: cover;
+      background-size: 1920px 1080px;
     }
     100% {
       background-image: url("https://res.cloudinary.com/dzjkwepju/image/upload/v1634223696/Styckr/zzz_ay07gu.jpg");
-      background-size: cover;
+      background-size: 1920px 1080px;
     }
   }
